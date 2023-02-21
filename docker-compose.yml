@@ -80,18 +80,6 @@ services:
       - "${FORWARD_REDIS_PORT:-6379}:6379"
     networks:
       - laravel
-  npm:
-    image: node:alpine
-    volumes:
-      - ./src:/var/www
-    ports:
-      - "${FORWARD_NPM_PORT1:-3000}:3000"
-      - "${FORWARD_NPM_PORT2:-3001}:3001"
-      - "${FORWARD_NPM_PORT3:-5174}:5174"
-    working_dir: /var/www
-    entrypoint: ["npm"]
-    networks:
-      - laravel
   meilisearch:
     image: 'getmeili/meilisearch:latest'
     ports:
