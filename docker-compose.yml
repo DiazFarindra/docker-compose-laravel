@@ -24,6 +24,7 @@ services:
       args:
         - USER=${USER}
         - UID=${UID:-1000}
+        - NODE_VERSION=${NODE_VERSION:-18}
     working_dir: /var/www
     restart: unless-stopped
     volumes:
